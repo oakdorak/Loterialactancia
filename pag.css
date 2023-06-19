@@ -6,6 +6,7 @@ body {
 h1 {
     color: #333333;
     text-align: center;
+    font-size: 9vw;
 }
 
 .container {
@@ -18,7 +19,7 @@ button {
     display: inline-block;
     margin: 0 0.5em;
     padding: 15px 30px;
-    font-size: 18px;
+    font-size: 3vw;
     font-weight: bold;
     color: #f3f3f3;
     background-color: #9474b3;
@@ -56,7 +57,7 @@ button:hover {
 #tituloCarta {
     color: #333333;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 7vw;
 }
 
 #logoP{
