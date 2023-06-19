@@ -3,7 +3,7 @@ html, body {
   margin: 0;
 }
 
-.Loteriacontainer {
+.loteriaContainer {
   height: 100%;
   width: 100%;
   display: flex;
@@ -45,7 +45,7 @@ button {
     display: inline-block;
     margin: 0 0.5em;
     padding: 15px 30px;
-    font-size: 15px;
+    font-size: 2vw;
     font-weight: bold;
     color: #f3f3f3;
     background-color: #9474b3;
