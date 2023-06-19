@@ -37,7 +37,7 @@ button:hover {
     justify-content: center;
     align-items: center;
     width: auto;
-    height: 500px;
+    height: auto;
     margin-top: 25px;
     background-color: #f3f3f3;
     border: 3px solid #333333;
