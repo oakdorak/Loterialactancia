@@ -175,22 +175,25 @@ document.getElementById("emailForm").addEventListener("submit", function (event)
     generateLoteriaTable();
 });
 
-// Agrega el evento click al botón de compartir
-shareButton.addEventListener('click', function() {
-  // Obtiene la tabla de imágenes
-  var loteriaContainer = document.getElementById('loteriaContainer');
+// Obtén una referencia a la tabla
+var table = document.getElementById("loteriaTable");
 
-  // Utiliza html2canvas para convertir el contenedor en una imagen PNG
-  html2canvas(loteriaContainer).then(function(canvas) {
-    // Crea un enlace de descarga con la imagen PNG
-    var downloadLink = document.createElement('a');
-    downloadLink.href = canvas.toDataURL('image/png');
-    downloadLink.download = 'tabla_imagenes.png';
-    downloadLink.style.display = 'none';
+// Genera las celdas de la tabla y agrega el evento de clic
+for (var i = 0; i < 16; i++) {
+  // Crea una nueva celda (td)
+  var cell = document.createElement("td");
 
-    // Agrega el enlace de descarga al documento y haz clic en él
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
+  // Agrega una imagen a la celda
+  var img = document.createElement("img");
+  img.src = mazo[i];
+  cell.appendChild(img);
+
+  // Agrega el evento de clic a la celda
+  cell.addEventListener("click", function() {
+    // Marca o desmarca la celda al hacer clic
+    this.classList.toggle("marked");
   });
-});
+
+  // Agrega la celda a la fila de la tabla
+  table.appendChild(cell);
+}
