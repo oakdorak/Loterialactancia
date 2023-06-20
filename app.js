@@ -186,7 +186,7 @@ function toggleSelectedCard(img) {
     title.style.backgroundColor = "#9474b3"; // Restaurar el fondo original
   } else {
     selectedCards.push(imgSrc);
-    title.style.backgroundColor = "red"; // Cambiar el fondo del título al hacer clic
+    title.style.backgroundColor = "#333333"; // Cambiar el fondo del título al hacer clic
   }
 }
 

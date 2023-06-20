@@ -8,11 +8,22 @@ body {
   }
  
   footer {
-    background-color: #f2f2f2;
+    background-color: #f3f3f3;
     padding: 20px;
     text-align: center;
     font-size: 14px;
 }
+
+#selectedCardsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  #selectedCardsList li {
+    flex-basis: calc(100% / 3); /* Para 2 elementos por fila */
+    /* flex-basis: calc(100% / 3); Para 3 elementos por fila */
+  }
 
 footer p {
     margin: 0;
