@@ -104,7 +104,7 @@ function actualizarListaCartasTomadas() {
   
       // Crea un elemento de span para mostrar el número de carta
       var numeroCartaElement = document.createElement("span");
-      numeroCartaElement.textContent = "Nº " + numeroCarta;
+      numeroCartaElement.textContent = numeroCarta + ".-";
   
       // Crea un elemento de span para mostrar el título de la carta
       var tituloCarta = document.createElement("span");
