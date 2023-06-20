@@ -177,15 +177,19 @@ function generateLoteriaTable() {
 function toggleSelectedCard(img) {
     img.classList.toggle("selected");
     var imgSrc = img.src;
+    var title = img.nextElementSibling;
 
-    if (selectedCards.includes(imgSrc)) {
-        selectedCards = selectedCards.filter(function (src) {
-            return src !== imgSrc;
-        });
-    } else {
-        selectedCards.push(imgSrc);
-    }
+  if (selectedCards.includes(imgSrc)) {
+    selectedCards = selectedCards.filter(function (src) {
+      return src !== imgSrc;
+    });
+    title.style.backgroundColor = "#9474b3"; // Restaurar el fondo original
+  } else {
+    selectedCards.push(imgSrc);
+    title.style.backgroundColor = "red"; // Cambiar el fondo del título al hacer clic
+  }
 }
+
 
 function getRandomIndexes(max, count) {
     var indexes = [];
