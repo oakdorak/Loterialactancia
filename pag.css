@@ -2,7 +2,54 @@ body {
     background-color: #f3f3f3;
     font-family: Arial, sans-serif;
 }
+#selectedCardsList {
+    list-style: none;
+    padding: 0;
+  }
+ 
+  footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
 
+footer p {
+    margin: 0;
+} 
+
+  #selectedCardsList li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  #selectedCardsList img {
+    width: 20%;
+  }
+  
+  #selectedCardsList span {
+    font-size: 2vw;
+    margin-left: 10px;
+  }
+
+.imageContainer {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .imageTitle {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    color: #f3f3f3;
+    background-color: #9474b3;
+    font-size: 14px;
+    text-align: center;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+  }
 h1 {
     color: #333333;
     text-align: center;
@@ -30,7 +77,7 @@ button {
     display: inline-block;
     margin: 0 0.5em;
     padding: 15px 30px;
-    font-size: 2gvw;
+    font-size: 2vw;
     font-weight: bold;
     color: #f3f3f3;
     background-color: #9474b3;

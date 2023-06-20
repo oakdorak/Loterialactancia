@@ -1,8 +1,8 @@
 var mazo = [
     "imgs/La teta.png",
-    "imgs/La grieta.png",
-    "imgs/La bolsa recolectora.png",
     "imgs/La pezonera.png",
+    "imgs/La bolsa recolectora.png",
+    "imgs/La grieta.png",
     "imgs/La mastitis.png",
     "imgs/El calostro.png",
     "imgs/La gamaglobulina.png",
@@ -74,11 +74,49 @@ function tomarCarta() {
         return;
     }
 
-    imagenCartaTomada.src = mazo[indiceCartaTomada];
-    tituloCarta.textContent = obtenerTituloImagen(mazo[indiceCartaTomada]);
-    indiceCartaTomada++;
+    
+  imagenCartaTomada.src = mazo[indiceCartaTomada];
+  tituloCarta.textContent = obtenerTituloImagen(mazo[indiceCartaTomada]);
+
+  // Almacena la imagen y el título en la lista de cartas tomadas
+  cartasTomadas.push({
+    imagen: mazo[indiceCartaTomada],
+    titulo: obtenerTituloImagen(mazo[indiceCartaTomada])
+  });
+
+  indiceCartaTomada++;
+  actualizarListaCartasTomadas();
 }
 
+function actualizarListaCartasTomadas() {
+    var lista = document.getElementById("selectedCardsList");
+    lista.innerHTML = ""; // Borra el contenido anterior de la lista
+  
+    // Crea los elementos de lista para cada carta tomada y los agrega a la lista
+    cartasTomadas.forEach(function (carta, index) {
+      var li = document.createElement("li");
+      var img = document.createElement("img");
+      img.src = carta.imagen;
+      img.alt = carta.titulo;
+  
+      // Obtiene el número de carta sumando 1 al índice de la carta en el array "mazo"
+      var numeroCarta = mazo.indexOf(carta.imagen) + 1;
+  
+      // Crea un elemento de span para mostrar el número de carta
+      var numeroCartaElement = document.createElement("span");
+      numeroCartaElement.textContent = "Nº " + numeroCarta;
+  
+      // Crea un elemento de span para mostrar el título de la carta
+      var tituloCarta = document.createElement("span");
+      tituloCarta.textContent = carta.titulo;
+  
+      li.appendChild(img);
+      li.appendChild(numeroCartaElement);
+      li.appendChild(tituloCarta);
+      lista.appendChild(li);
+    });
+  }
+  
 function mezclarArray(array) {
 var indiceActual = array.length;
 var valorTemporal, indiceAleatorio;
@@ -108,30 +146,39 @@ function generateLoteriaTable() {
     var container = document.getElementById("loteriaContainer");
     var table = document.createElement("table");
     var indexArray = getRandomIndexes(mazo.length, 16);
-
+  
     for (var i = 0; i < 4; i++) {
-        var row = document.createElement("tr");
-        for (var j = 0; j < 4; j++) {
-            var cell = document.createElement("td");
-            var imgIndex = indexArray[i * 4 + j];
-            var imgSrc = mazo[imgIndex];
-
-            var img = document.createElement("img");
-            img.src = imgSrc;
-            img.addEventListener("click", function () {
-                toggleSelectedCard(this);
-            });
-
-            cell.appendChild(img);
-            row.appendChild(cell);
-        }
-        table.appendChild(row);
+      var row = document.createElement("tr");
+      for (var j = 0; j < 4; j++) {
+        var cell = document.createElement("td");
+        cell.style.width = "25%"; // Añadimos un ancho fijo del 25% a cada celda
+  
+        var imgIndex = indexArray[i * 4 + j];
+        var imgSrc = mazo[imgIndex];
+        var imgTitle = obtenerTituloImagen(imgSrc);
+  
+        var img = document.createElement("img");
+        img.src = imgSrc;
+        img.alt = imgTitle;
+        img.addEventListener("click", function () {
+          toggleSelectedCard(this);
+        });
+  
+        var title = document.createElement("div");
+        title.textContent = imgTitle;
+        title.className = "imageTitle";
+  
+        cell.appendChild(img);
+        cell.appendChild(title);
+        row.appendChild(cell);
+      }
+      table.appendChild(row);
     }
-
+  
     container.innerHTML = "";
     container.appendChild(table);
-}
-
+  }
+  
 function toggleSelectedCard(img) {
     img.classList.toggle("selected");
     var imgSrc = img.src;
