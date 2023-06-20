@@ -1,57 +1,58 @@
 var mazo = [
-    "imgs/La teta.png",
-    "imgs/La pezonera.png",
-    "imgs/La bolsa recolectora.png",
-    "imgs/La grieta.png",
-    "imgs/La mastitis.png",
-    "imgs/El calostro.png",
-    "imgs/La gamaglobulina.png",
-    "imgs/Los neutrófilos.png",
-    "imgs/El frenillo lingual.png",
-    "imgs/El pezón.png",
-    "imgs/La areola.png",
-    "imgs/El apego.png",
-    "imgs/El alojamiento conjunto.png",
-    "imgs/Las señales de hambre.png",
-    "imgs/Los grupos de apoyo.png",
-    "imgs/La lactancia exclusiva.png",
-    "imgs/El chupón.png",
-    "imgs/El biberón.png",
-    "imgs/El agarre.png",
-    "imgs/Las señales de alarma.png",
-    "imgs/La ictericia.png",
-    "imgs/El extractor.png",
-    "imgs/El galactogogo.png",
-    "imgs/La asesora de lactancia.png",
-    "imgs/El pediatra.png",
-    "imgs/El hospital amigo.png",
-    "imgs/La enfermera de cunas.png",
-    "imgs/El trabajo.png",
-    "imgs/La guardería.png",
-    "imgs/El porteo.png",
-    "imgs/El colecho.png",
-    "imgs/La ginecóloga.png",
-    "imgs/La doula.png",
-    "imgs/La sonaja.png",
-    "imgs/El cordón umbilical.png",
-    "imgs/La placenta.png",
-    "imgs/La lata de fórmula.png",
-    "imgs/La depre.png",
-    "imgs/El cólico.png",
-    "imgs/El método canguro.png",
-    "imgs/La epidural.png",
-    "imgs/El bajo peso.png",
-    "imgs/La pelota.png",
-    "imgs/El suero glucosado.png",
-    "imgs/El destete.png",
-    "imgs/La ablactación.png",
-    "imgs/Las medicinas.png",
-    "imgs/El sueño.png",
-    "imgs/El banco de leche.png",
-    "imgs/El recíen nacido.png",
-    "imgs/El prematuro.png",
-    "imgs/Las gemelas.png",
-    "imgs/El caballito.png",
+    "imgs/1. La teta.png",
+    "imgs/2. La pezonera.png",
+    "imgs/3. La bolsa recolectora.png",
+    "imgs/4. La grieta.png",
+    "imgs/5. La mastitis.png",
+    "imgs/6. El calostro.png",
+    "imgs/7. La gamaglobulina.png",
+    "imgs/8. Los neutrófilos.png",
+    "imgs/9. La lactosa.png",
+    "imgs/10. El frenillo lingual.png",
+    "imgs/11. El pezón.png",
+    "imgs/12. La areola.png",
+    "imgs/13. El apego.png",
+    "imgs/14. El alojamiento conjunto.png",
+    "imgs/15. Las señales de hambre.png",
+    "imgs/16. Los grupos de apoyo.png",
+    "imgs/17. La lactancia exclusiva.png",
+    "imgs/18. El chupón.png",
+    "imgs/19. El biberón.png",
+    "imgs/20. El agarre.png",
+    "imgs/21. Las señales de alarma.png",
+    "imgs/22. La ictericia.png",
+    "imgs/23. El extractor.png",
+    "imgs/24. El galactogogo.png",
+    "imgs/25. La asesora de lactancia.png",
+    "imgs/26. El pediatra.png",
+    "imgs/27. El hospital amigo.png",
+    "imgs/28. La enfermera de cunas.png",
+    "imgs/29. El trabajo.png",
+    "imgs/30. La guardería.png",
+    "imgs/31. El porteo.png",
+    "imgs/32. El colecho.png",
+    "imgs/33. La ginecóloga.png",
+    "imgs/34. La doula.png",
+    "imgs/35. La sonaja.png",
+    "imgs/36. El cordón umbilical.png",
+    "imgs/37. La placenta.png",
+    "imgs/38. La lata de fórmula.png",
+    "imgs/39. La depre.png",
+    "imgs/40. El cólico.png",
+    "imgs/41. El método canguro.png",
+    "imgs/42. La epidural.png",
+    "imgs/43. El bajo peso.png",
+    "imgs/44. La pelota.png",
+    "imgs/45. El suero glucosado.png",
+    "imgs/46. El destete.png",
+    "imgs/47. La ablactación.png",
+    "imgs/48. Las medicinas.png",
+    "imgs/49. El sueño.png",
+    "imgs/50. El banco de leche.png",
+    "imgs/51. El recíen nacido.png",
+    "imgs/52. El prematuro.png",
+    "imgs/53. Las gemelas.png",
+    "imgs/54. El caballito.png",
     
 ];
 
@@ -99,19 +100,13 @@ function actualizarListaCartasTomadas() {
       img.src = carta.imagen;
       img.alt = carta.titulo;
   
-      // Obtiene el número de carta sumando 1 al índice de la carta en el array "mazo"
-      var numeroCarta = mazo.indexOf(carta.imagen) + 1;
-  
-      // Crea un elemento de span para mostrar el número de carta
-      var numeroCartaElement = document.createElement("span");
-      numeroCartaElement.textContent = numeroCarta + ".-";
+   
   
       // Crea un elemento de span para mostrar el título de la carta
       var tituloCarta = document.createElement("span");
       tituloCarta.textContent = carta.titulo;
   
       li.appendChild(img);
-      li.appendChild(numeroCartaElement);
       li.appendChild(tituloCarta);
       lista.appendChild(li);
     });
