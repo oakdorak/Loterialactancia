@@ -33,7 +33,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 20em;
+    font-size: 17em;
     user-select: none;
   }
 footer p {
