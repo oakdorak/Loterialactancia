@@ -138,55 +138,70 @@ return titulo;
 var selectedCards = [];
 
 function generateLoteriaTable() {
-    var container = document.getElementById("loteriaContainer");
-    var table = document.createElement("table");
-    var indexArray = getRandomIndexes(mazo.length, 16);
-  
-    for (var i = 0; i < 4; i++) {
-      var row = document.createElement("tr");
-      for (var j = 0; j < 4; j++) {
-        var cell = document.createElement("td");
-        cell.style.width = "25%"; // Añadimos un ancho fijo del 25% a cada celda
-  
-        var imgIndex = indexArray[i * 4 + j];
-        var imgSrc = mazo[imgIndex];
-        var imgTitle = obtenerTituloImagen(imgSrc);
-  
-        var img = document.createElement("img");
-        img.src = imgSrc;
-        img.alt = imgTitle;
-        img.addEventListener("click", function () {
-          toggleSelectedCard(this);
-        });
-  
-        var title = document.createElement("div");
-        title.textContent = imgTitle;
-        title.className = "imageTitle";
-  
-        cell.appendChild(img);
-        cell.appendChild(title);
-        row.appendChild(cell);
-      }
-      table.appendChild(row);
+  var container = document.getElementById("loteriaContainer");
+  var table = document.createElement("table");
+  var indexArray = getRandomIndexes(mazo.length, 16);
+
+  for (var i = 0; i < 4; i++) {
+    var row = document.createElement("tr");
+    for (var j = 0; j < 4; j++) {
+      var cell = document.createElement("td");
+      cell.style.width = "25%"; // Añadimos un ancho fijo del 25% a cada celda
+
+      var imgIndex = indexArray[i * 4 + j];
+      var imgSrc = mazo[imgIndex];
+      var imgTitle = obtenerTituloImagen(imgSrc);
+
+      var imgContainer = document.createElement("div"); // Contenedor para la imagen
+      imgContainer.className = "imageContainer";
+
+      var img = document.createElement("img");
+      img.src = imgSrc;
+      img.alt = imgTitle;
+      img.addEventListener("click", function () {
+        toggleSelectedCard(this);
+      });
+
+      var title = document.createElement("div");
+      title.textContent = imgTitle;
+      title.className = "imageTitle";
+
+      // Agregar un elemento div para la marca de la celda
+      var mark = document.createElement("div");
+      mark.className = "mark";
+
+      imgContainer.appendChild(img);
+      imgContainer.appendChild(mark); // Agregar la marca al contenedor de la imagen
+      cell.appendChild(imgContainer);
+      cell.appendChild(title);
+      row.appendChild(cell);
     }
-  
-    container.innerHTML = "";
-    container.appendChild(table);
+    table.appendChild(row);
   }
-  
+
+  container.innerHTML = "";
+  container.appendChild(table);
+}
+
 function toggleSelectedCard(img) {
-    img.classList.toggle("selected");
-    var imgSrc = img.src;
-    var title = img.nextElementSibling;
+  img.classList.toggle("selected");
+  var imgSrc = img.src;
+  var title = img.parentElement.nextElementSibling;
+
+  // Obtener la marca de la celda
+  var mark = img.nextElementSibling;
 
   if (selectedCards.includes(imgSrc)) {
     selectedCards = selectedCards.filter(function (src) {
       return src !== imgSrc;
     });
     title.style.backgroundColor = "#9474b3"; // Restaurar el fondo original
+    mark.textContent = ""; // Eliminar la marca
   } else {
     selectedCards.push(imgSrc);
-    title.style.backgroundColor = "#333333"; // Cambiar el fondo del título al hacer clic
+    title.style.backgroundColor = "red"; // Cambiar el fondo del título al hacer clic
+    mark.textContent = "X"; // Agregar la marca "X"
+    mark.style.color = "red"; // Cambiar el color de la marca a rojo
   }
 }
 

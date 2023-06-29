@@ -24,7 +24,17 @@ body {
     flex-basis: calc(100% / 3); /* Para 2 elementos por fila */
     /* flex-basis: calc(100% / 3); Para 3 elementos por fila */
   }
-
+  .imageContainer {
+    position: relative;
+  }
+  
+  .mark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20em;
+  }
 footer p {
     margin: 0;
 } 
