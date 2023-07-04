@@ -27,7 +27,9 @@ body {
   .imageContainer {
     position: relative;
   }
-  
+  .hidden {
+    display: none;
+  }
   .mark {
     position: absolute;
     top: 50%;

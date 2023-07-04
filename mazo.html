@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mezclador de Cartas</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="pag.css" />
+</head>
+<body>
+
+    <img src="imgs/Logo-pediatría-humanizada-header-01-3.png" id="logoP">
+    <h1>Lotería de la Lactancia</h1>
+    <div class="container">
+        <button id="botonMezclar" onclick="mezclarMazo()">Mezclar</button>
+        <button id="botonTomar" onclick="tomarCarta()">Tomar</button>
+    </div>
+    <div id="contenedorCarta">
+        <img id="cartaTomada" src="" alt="Carta Tomada">
+        <span id="tituloCarta"></span>
+    </div>
+ 
+    <ul id="selectedCardsList"></ul>
+     <a href="tabla.html"><button>Tabla</button></a>
+
+     <footer>
+        <p>&copy; Pediatria Humanizada - Semana Mundial de la Lactancia Materna 2023. Todos los derechos reservados.</p>
+    </footer>
+ 
+    <script src="app.js"></script>
+</body>
+</html>
+
+

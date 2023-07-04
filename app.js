@@ -202,9 +202,15 @@ function toggleSelectedCard(img) {
     title.style.backgroundColor = "red"; // Cambiar el fondo del título al hacer clic
     mark.textContent = "X"; // Agregar la marca "X"
     mark.style.color = "red"; // Cambiar el color de la marca a rojo
-  }
+  } 
+// Habilitar o deshabilitar el botón de descarga según la validación
+var downloadButton = document.getElementById("downloadButton");
+downloadButton.classList.toggle("hidden", !validateSelection());
+  
 }
-
+function validateSelection() {
+  return selectedCards.length === 16;
+}
 
 function getRandomIndexes(max, count) {
     var indexes = [];
@@ -237,7 +243,7 @@ document.getElementById("emailForm").addEventListener("submit", function (event)
 });
 
 // Agrega el evento click al botón de compartir
-shareButton.addEventListener('click', function() {
+downloadButton.addEventListener('click', function() {
   // Obtiene la tabla de imágenes
   var loteriaContainer = document.getElementById('loteriaContainer');
 

@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Mezclador de Cartas</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="pag.css" />
-</head>
-<body>
+    <head>
+        <title>Carta para jugar</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="pag.css" />
+    </head>
+    <body>
+        <img src="imgs/Logo-pediatría-humanizada-header-01-3.png" id="logoP">
+       
+        <form id="emailForm">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" required>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="loteriaContainer"></div>
+          
 
-    <img src="imgs/Logo-pediatría-humanizada-header-01-3.png" id="logoP">
-    <h1>Lotería de la Lactancia</h1>
-    <div class="container">
-        <button id="botonMezclar" onclick="mezclarMazo()">Mezclar</button>
-        <button id="botonTomar" onclick="tomarCarta()">Tomar</button>
-    </div>
-    <div id="contenedorCarta">
-        <img id="cartaTomada" src="" alt="Carta Tomada">
-        <span id="tituloCarta"></span>
-    </div>
- 
-    <ul id="selectedCardsList"></ul>
-     <a href="tabla.html"><button>Tabla</button></a>
+        <button id="downloadButton" class="hidden">Descargar tabla</button>
 
-     <footer>
-        <p>&copy; Pediatria Humanizada - Semana Mundial de la Lactancia Materna 2023. Todos los derechos reservados.</p>
-    </footer>
- 
-    <script src="app.js"></script>
-</body>
+        <footer>
+            <p>&copy; Pediatria Humanizada - Semana Mundial de la Lactancia Materna 2023. Todos los derechos reservados.</p>
+        </footer>
+
+        <!-- Agrega el código del SDK de Facebook -->
+        <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+        <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+        <script src="app.js"></script>
+    </body>
 </html>
-
-
