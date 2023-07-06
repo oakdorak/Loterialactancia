@@ -141,7 +141,22 @@ button:hover {
     font-weight: bold;
     font-size: 7vw;
 }
-
+#trebol{
+    width: 30px;
+}
+p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+#footer{
+    font-size: small;
+    font-weight: normal;
+}
 #logoP{
     display: block;
     margin-left: auto;
@@ -151,6 +166,9 @@ button:hover {
 form{
     font-size: 2vw;
 }
+.hidden {
+    display: none;
+  }
 
 @media (max-width: 600px) {
 .container {
@@ -194,7 +212,9 @@ button {
 button:hover {
     background-color: #333333;
 }
-
+.hidden {
+    display: none;
+  }
 #contenedorCarta {
     display: flex;
     flex-direction: column;

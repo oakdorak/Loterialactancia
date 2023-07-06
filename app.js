@@ -1,3 +1,10 @@
+window.onload = function() {
+  var winMessage = document.getElementById("winMessage");
+  winMessage.classList.toggle("hidden", !isValidationCompleted);
+};
+
+var isValidationCompleted = false;
+
 var mazo = [
     "imgs/1. La teta.png",
     "imgs/2. La pezonera.png",
@@ -203,10 +210,25 @@ function toggleSelectedCard(img) {
     mark.textContent = "X"; // Agregar la marca "X"
     mark.style.color = "red"; // Cambiar el color de la marca a rojo
   } 
+  if (selectedCards.length === 16) {
+    // Mostrar el mensaje y la alerta
+    var winMessage = document.getElementById("winMessage");
+    winMessage.classList.remove("hidden");
+  }
 // Habilitar o deshabilitar el botón de descarga según la validación
-var downloadButton = document.getElementById("downloadButton");
-downloadButton.classList.toggle("hidden", !validateSelection());
-  
+    var downloadButton = document.getElementById("downloadButton");
+    downloadButton.classList.toggle("hidden", !validateSelection());
+
+// Mostrar la leyenda si todas las cartas están seleccionadas
+  var winMessage = document.getElementById("winMessage");
+  var isWinner = validateSelection();
+  winMessage.classList.toggle("hidden", !isWinner);
+
+  // Mostrar una alerta si todas las cartas están seleccionadas
+  if (isWinner) {
+    alert("¡¡¡Felicidades!!! Para reclamar tu premio, sigue las instrucciones abajo");
+    isValidationCompleted = true;
+  }
 }
 function validateSelection() {
   return selectedCards.length === 16;
