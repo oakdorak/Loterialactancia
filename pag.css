@@ -144,19 +144,24 @@ button:hover {
 #trebol{
     width: 30px;
 }
-p{
+    p{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: #9474b3;
+    color: white;
     padding: 20px;
     font-size: 18px;
     font-weight: bold;
   }
-#footer{
+  #footer{
+    background-color: #f3f3f3;
+    color: #333333;
     font-size: small;
     font-weight: normal;
-}
+  }
+
 #logoP{
     display: block;
     margin-left: auto;
