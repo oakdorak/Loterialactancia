@@ -226,7 +226,7 @@ function toggleSelectedCard(img) {
 
   // Mostrar una alerta si todas las cartas están seleccionadas
   if (isWinner) {
-    alert("¡¡¡Felicidades!!! Para reclamar tu premio, sigue las instrucciones abajo");
+    alert("¡¡¡Felicidades!!! Para reclamar tu premio, sigue las instrucciones al final de la página.");
     isValidationCompleted = true;
   }
 }
