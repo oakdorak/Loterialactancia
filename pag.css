@@ -159,12 +159,23 @@ button:hover {
     font-size: small;
     font-weight: normal;
   }
-
+#Logosamiwos{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
 #logoP{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 250px;
+    width: 300px;
+}
+#logos{
+  width: 200px;
+}
+#logosA{
+  width: 120px;
 }
 form{
     font-size: 2vw;
