@@ -50,7 +50,7 @@ var mazo = [
     "imgs/42. La epidural.png",
     "imgs/43. El bajo peso.png",
     "imgs/44. La pelota.png",
-    "imgs/45. El suero glucosado.png",
+    "imgs/45. La libre necesidad.png",
     "imgs/46. El destete.png",
     "imgs/47. La ablactación.png",
     "imgs/48. Las medicinas.png",
