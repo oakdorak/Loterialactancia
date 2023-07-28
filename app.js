@@ -304,7 +304,7 @@ function shareOnFacebook() {
     // Compartir en Facebook
     FB.ui({
       method: "share",
-      href: window.location.href,
+      href: "https://loterialactancia.netlify.app/",
       quote: message,
       hashtag: "#LactanciaMaterna",
       picture: imageUrl
