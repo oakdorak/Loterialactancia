@@ -214,7 +214,7 @@ function toggleSelectedCard(img) {
     // Mostrar el mensaje y la alerta
     var winMessage = document.getElementById("winMessage");
     winMessage.classList.remove("hidden");
-    
+
     // Mostrar el botón de compartir
     var shareButton = document.getElementById("shareButton");
     shareButton.classList.remove("hidden");
@@ -298,7 +298,7 @@ function shareOnFacebook() {
 
   // Generar la imagen utilizando html2canvas
   html2canvas(container).then(function(canvas) {
-    // Obtener la URL de la imagen generada
+    // Obtener la URL de la imagen generada en formato PNG
     var imageUrl = canvas.toDataURL("image/png");
 
     // Compartir en Facebook
