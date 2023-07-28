@@ -292,7 +292,7 @@ downloadButton.addEventListener('click', function() {
 function shareOnFacebook() {
   var message = "Gane en la lotería de la #LactanciaMaterna. Muchísimas gracias a los @doctoresrobledo y @nacercrecermx";
 
-  // Obtener la referencia al contenedor de la tabla ganadora
+  // Obtener la referencia al contenedor de la tabla
   var container = document.getElementById("loteriaContainer");
 
   // Generar la imagen utilizando html2canvas
