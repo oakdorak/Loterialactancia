@@ -219,6 +219,10 @@ function toggleSelectedCard(img) {
     var downloadButton = document.getElementById("downloadButton");
     downloadButton.classList.toggle("hidden", !validateSelection());
 
+    // Mostrar el botón de compartir
+    var shareButton = document.getElementById("shareButton");
+    shareButton.classList.remove("hidden");
+
 // Mostrar la leyenda si todas las cartas están seleccionadas
   var winMessage = document.getElementById("winMessage");
   var isWinner = validateSelection();
@@ -282,4 +286,29 @@ downloadButton.addEventListener('click', function() {
     downloadLink.click();
     document.body.removeChild(downloadLink);
   });
+
 });
+
+function shareOnFacebook() {
+  var message = "Gane en la lotería de la #LactanciaMaterna. Muchísimas gracias a los @doctoresrobledo y @nacercrecermx";
+
+  // Obtener la referencia al contenedor de la tabla ganadora
+  var container = document.getElementById("loteriaContainer");
+
+  // Generar la imagen utilizando html2canvas
+  html2canvas(container).then(function(canvas) {
+    // Obtener la URL de la imagen generada
+    var imageUrl = canvas.toDataURL("image/png");
+
+    // Compartir en Facebook
+    FB.ui({
+      method: "share",
+      href: window.location.href,
+      quote: message,
+      hashtag: "#LactanciaMaterna",
+      picture: imageUrl
+    }, function(response) {
+      console.log(response);
+    });
+  });
+}

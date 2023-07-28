@@ -4,6 +4,7 @@
         <title>Carta para jugar</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="pag.css" />
+        <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
     </head>
     <body>
         <img src="imgs/Logo-pediatría-humanizada-header-01-3.png" id="logoP">
@@ -21,6 +22,8 @@
         <p id="winMessage" class="hidden">¡FELICIDADES GANADORA! Descarga tu tabla y compártela en tus redes sociales, menciona a @doctoresrobledo, @nacerycrecer, @doulasmonterrey, @casaluzmty, @ligadelalechemty, @doulasmae, @samaraferrara, @soymamaabu y
             @parterasmonterrey para canjear tu premio. Disfruta la Semana Mundial de Lactancia Materna y recuerda siempre darle lo mejor a tu bebé.</p>
         <button id="downloadButton" class="hidden">Descargar tabla</button>
+        <button id="shareButton" class="hidden" onclick="shareOnFacebook()">Compartir en Facebook</button>
+
         <footer>
             <div id="Logosamiwos">
 
@@ -32,7 +35,6 @@
         </footer>
 
         <!-- Agrega el código del SDK de Facebook -->
-        <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
         <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
         <script src="app.js"></script>
     </body>
