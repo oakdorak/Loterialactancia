@@ -214,14 +214,15 @@ function toggleSelectedCard(img) {
     // Mostrar el mensaje y la alerta
     var winMessage = document.getElementById("winMessage");
     winMessage.classList.remove("hidden");
+    
+    // Mostrar el botón de compartir
+    var shareButton = document.getElementById("shareButton");
+    shareButton.classList.remove("hidden");
   }
 // Habilitar o deshabilitar el botón de descarga según la validación
     var downloadButton = document.getElementById("downloadButton");
     downloadButton.classList.toggle("hidden", !validateSelection());
 
-    // Mostrar el botón de compartir
-    var shareButton = document.getElementById("shareButton");
-    shareButton.classList.remove("hidden");
 
 // Mostrar la leyenda si todas las cartas están seleccionadas
   var winMessage = document.getElementById("winMessage");
