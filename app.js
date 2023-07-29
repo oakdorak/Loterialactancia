@@ -215,9 +215,6 @@ function toggleSelectedCard(img) {
     var winMessage = document.getElementById("winMessage");
     winMessage.classList.remove("hidden");
 
-    // Mostrar el botón de compartir
-    var shareButton = document.getElementById("shareButton");
-    shareButton.classList.remove("hidden");
   }
 // Habilitar o deshabilitar el botón de descarga según la validación
     var downloadButton = document.getElementById("downloadButton");
