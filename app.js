@@ -286,27 +286,3 @@ downloadButton.addEventListener('click', function() {
   });
 
 });
-
-function shareOnFacebook() {
-  var message = "Gane en la lotería de la #LactanciaMaterna. Muchísimas gracias a los @doctoresrobledo y @nacercrecermx";
-
-  // Obtener la referencia al contenedor de la tabla
-  var container = document.getElementById("loteriaContainer");
-
-  // Generar la imagen utilizando html2canvas
-  html2canvas(container).then(function(canvas) {
-    // Obtener la URL de la imagen generada en formato PNG
-    var imageUrl = canvas.toDataURL("image/png");
-
-    // Compartir en Facebook con una URL válida
-    FB.ui({
-      method: "share",
-      href: "https://loterialactancia.netlify.app", // Reemplaza con la URL de tu página
-      quote: message,
-      hashtag: "#LactanciaMaterna",
-      picture: imageUrl
-    }, function(response) {
-      console.log(response);
-    });
-  });
-}
