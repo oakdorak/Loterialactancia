@@ -304,7 +304,7 @@ function shareOnFacebook() {
     // Compartir en Facebook con una URL válida
     FB.ui({
       method: "share",
-      href: "https://www.loterialactancia.netlify.app", // Reemplaza con la URL de tu página
+      href: "https://loterialactancia.netlify.app", // Reemplaza con la URL de tu página
       quote: message,
       hashtag: "#LactanciaMaterna",
       picture: imageUrl
